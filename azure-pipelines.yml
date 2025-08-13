@@ -23,3 +23,10 @@ steps:
     backendAzureRmStorageAccountName: 'pipilinestg1'
     backendAzureRmContainerName: 'apnacontainer1'
     backendAzureRmKey: 'yaml.tfstate'
+- task: TerraformTask@5
+  displayName: 'PLAN'
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    environmentServiceNameAzureRM: 'yaml service connection1'
+  
